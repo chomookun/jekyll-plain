@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset='utf-8'>
     <title>
@@ -11,21 +10,195 @@
         {% endif %}
     </title>
 
-    {% if site.highlighter %}
-        <link rel='stylesheet' href='{{ site.url }}/assets/css/syntax.css' type='text/css'>
-    {% endif %}
-    
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <script src="https://unpkg.com/duice@latest/dist/duice.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/duice@latest/dist/duice.css"/>
-    <link rel="stylesheet" href="https://unpkg.com/duice@latest/dist/duice-theme.css"/>
+    <script src="/static/duice/duice.js"></script>
+    <link rel="stylesheet" href="/static/duice/duice.css"/>
+    <link rel="stylesheet" href="/static/duice/duice-theme.css"/>
+    <link rel="stylesheet" href="/static/web.css"/>
+    <script src="/static/web.js"></script>
+    <link rel="stylesheet" href="/static/syntax.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+    <style>
+        body {
+            display: grid;
+            grid-template-areas:
+                '_header _header _header'
+                '_nav _main _aside'
+                '_footer _footer _footer';
+            grid-template-columns: 18rem calc(100% - 18rem - 5rem) 5rem;
+            grid-template-rows: auto 1fr 3rem;
+        }
+        @media screen and (max-width: 1023px) {
+            body {
+                display: grid;
+                grid-template-areas:
+                    '_header'
+                    '_nav'
+                    '_main'
+                    '_aside'
+                    '_footer';
+                grid-template-columns: 100%;
+                grid-template-rows: auto auto 1fr auto auto;
+                grid-gap: 0.5rem 0.5rem;
+            }
+        }
+        header {
+            grid-area: _header;
+            display: grid;
+            grid-template-areas:
+                    '_header-logo _header-menu';
+            grid-template-columns: auto auto;
+            align-items: center;
+            border-bottom: groove 3px lightgray;
+            background-color: #fafafa;
+            padding: 1rem;
+        }
+        .dark-mode header {
+            border-bottom: groove 2px #6b6b6b;
+            background-color: #222;
+        }
+        #_header-brand {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            height: 2rem;
+            line-height: 2rem;
+            font-size: 2rem;
+            gap: 0.5rem;
+        }
+        #_header-brand * {
+            height: inherit;
+            line-height: inherit;
+            font-size: inherit;
+            font-weight: bold;
+        }
+        #_header-menu {
+            grid-area: _header-menu;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: end;
+            align-items: center;
+            gap: 1rem;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        #_header-menu li {
+            /*margin: 0 0.5rem;*/
+            white-space: nowrap;
+        }
+        @media screen and (max-width: 1023px) {
+            header {
+                display: grid;
+                grid-template-areas:
+                    '_header-logo _header-menuButton'
+                    '_header-menu _header-menu';
+            }
+            header #_header-menuButton {
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                padding-right: 1rem;
+            }
+            header #_header-menu {
+                display: none;
+            }
+            header #_header-menu.open {
+                display: flex;
+                margin-top: 1rem;
+                padding-top: 1rem;
+            }
+        }
+        nav {
+            grid-area: _nav;
+            display: grid;
+            grid-template-areas:
+                '_nav-menu';
+            padding: 1rem;
+        }
+        nav #_nav-menu {
+            grid-area: _nav-menu;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav #_nav-menu li {
+            border-bottom: dotted 1px #ccc;
+        }
+        .dark-mode nav #_nav-menu li {
+            border-bottom: dotted 1px #444;
+        }
+        nav #_nav-menu li a {
+            display: inline-block;
+            padding: 0.5rem;
+            width: 100%;
+            transition-duration: 0.3s;
+            font-weight: 600;
+        }
+        nav #_nav-menu li a:hover {
+            padding-left: 1rem;
+        }
+        nav #_nav-menu li a.disabled{
+            pointer-events: none;
+        }
+        nav #_nav-menu li a.locked {
+            pointer-events: none;
+            opacity: 0.66;
+        }
+        nav #_nav-menu li a img {
+            height: 1.5em;
+            vertical-align: middle;
+            margin-right: 0.25em;
+        }
+        @media screen and (max-width: 1023px) {
+            nav {
+                display: none;
+            }
+            nav.open {
+                display: grid;
+            }
+        }
+        main {
+            grid-area: _main;
+            padding: 1rem;
+        }
+        aside {
+            grid-area: _aside;
+            padding: 1rem;
+        }
+        footer {
+            grid-area: _footer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: dotted 1px lightgray;
+            background-color: #fafafa;
+            font-size: smaller;
+            color: #ccc;
+        }
+        .dark-mode footer {
+            border-top: groove 1px #4b4b4b;
+            background-color: #222;
+            color: #888;
+        }
+    </style>
 </head>
 
 <body>
-    {% include header.html %}
+    <header>
+        {% include header.html %}
+    </header>
+    <nav>
+        {% include nav.html %}
+    </nav>
+    <main>
+        {{ content }}
+    </main>
+    <aside>
 
-    {{ content }}
-<hr>
-    <p><small> <i>Build with <a href="https://jekyllrb.com/">Jekyll</a> and  <a href="https://github.com/cyevgeniy/jekyll-true-minimal/">true minimal theme</a></i> </small></p>
+    </aside>
+    <footer>
+        {% include footer.html %}
+    </footer>
 </body>
 </html>

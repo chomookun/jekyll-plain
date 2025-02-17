@@ -1,0 +1,12 @@
+<ul id="_nav-menu">
+    {% assign docs = site.pages | where_exp: "doc", "doc.url contains '/docs/'" | sort: "path" %}
+    {% for doc in docs %}
+    <li>
+        <a href="{{ doc.url }}">
+            {{ doc.icon }}
+            {{ doc.title }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+

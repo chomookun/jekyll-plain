@@ -1,28 +1,19 @@
 name: "Jekyll true minimal theme"
 description: "Lightweight theme"
-
-url: '' 
-baseurl: ''
-
-markdown: kramdown
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-highlighter: rouge
-
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-
-plugins:
-  - jekyll-paginate
-paginate: 10
-paginate_path: /page-:num
-
-#disqus-id: your-disqus-id
+brand: <img class="icon" src="/static/image/brand-icon.svg"/>Jekyll Plain
 
 source: .
 destination: ./_site
 
-sass:
-    style: :compressed
-    sass_dir: assets/css/
+include:
+  - README.md
+  - static/image/brand-icon.svg
 
+plugins:
+  - jekyll-github-metadata
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
