@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {{ site.description }}
     <meta charset='utf-8'>
-    <title>{% if page.title %}{{ page.title }} | {{ site.name|default:'Jekyll Plain Theme' }}{% else %}{{ site.name|default:'Jekyll Plain Theme' }}{% endif %}</title>
-    <meta name="description" content="{{ site.description | default:'Jekyll Plain Theme is a simple and clean theme for Jekyll.' }}">
+    <title>{% if page.title %}{{ page.title }} | {{ site.name|default:site.github.repository_name }}{% else %}{{ site.name|default:site.github.repository_name }}{% endif %}</title>
+    <meta name="description" content="{{ site.description|default:site.site.github.repository_name }}">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="icon" type="image/png" href="{{ site.favicon|default:'/assets/image/brand-icon.svg' }}" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="{{ site.brand-icon|default:'/assets/image/brand-icon.svg' }}" sizes="32x32"/>
     <script src="/assets/duice/duice.js"></script>
     <link rel="stylesheet" href="/assets/duice/duice.css"/>
     <link rel="stylesheet" href="/assets/duice/duice-theme.css"/>

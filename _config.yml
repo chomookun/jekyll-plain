@@ -1,7 +1,7 @@
 name: ~
 description: ~
-favicon: ~
-brand: ~
+brand-icon: ~
+brand-name: ~
 
 destination: ./.site
 include:
