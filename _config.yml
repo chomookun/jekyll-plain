@@ -1,7 +1,7 @@
 name: ~
 description: ~
 brand-icon: ~
-brand-name: ~
+brand-title: ~
 
 plugins:
   - jekyll-github-metadata
