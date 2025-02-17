@@ -1,7 +1,7 @@
 name: "Jekyll Plain Theme"
 description: "Jekyll Plain Theme is a simple and clean theme for Jekyll."
-brand: <img class="icon" src="/static/image/brand-icon.svg"/>Jekyll Plain
-favicon: /static/image/brand-icon.svg
+brand: <img class="icon" src="/assets/image/brand-icon.svg"/>Jekyll Plain
+favicon: /assets/image/brand-icon.svg
 
 destination: ./.site
 include:

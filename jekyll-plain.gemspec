@@ -2,13 +2,13 @@
 # based off <https://github.com/jekyll/minima/blob/master/minima.gemspec>
 
 Gem::Specification.new do |spec|
-  spec.name          = "jekyll-true-minimal"
+  spec.name          = "jekyll-plain"
   spec.version       = "1.0.0"
-  spec.authors       = ["cyevgeniy"]
-  spec.email         = [""]
+  spec.authors       = ["chomookun"]
+  spec.email         = ["chomookun@gmail.com"]
 
-  spec.summary       = "Minimal and ascetic theme for jekyll."
-  spec.homepage      = "https://cyevgeniy.github.io/jekyll-true-minimal/"
+  spec.summary       = "Plain theme for jekyll."
+  spec.homepage      = "https://jekyll.chomookun.org"
   spec.license       = "MIT"
 
   spec.metadata["plugin_type"] = "theme"
