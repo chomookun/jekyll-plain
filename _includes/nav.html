@@ -3,8 +3,8 @@
     {% for doc in docs %}
     <li>
         <a href="{{ doc.url }}">
-            {{ doc.icon }}
-            {{ doc.title }}
+            {{ doc.icon | default:'<i class="fa-regular fa-file"></i>' }}
+            {{ doc.title | default:doc.name | remove:".md" | replace:"-"," " | capitalize }}
         </a>
     </li>
     {% endfor %}
