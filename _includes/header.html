@@ -1,5 +1,5 @@
 <span id="_header-brand" onclick="document.location.href='/'" class="cursor--pointer">
-    {{ site.brand }}
+    {{ site.brand|default:site.brand_ }}
 </span>
 <span id="_header-menu-button">
     <img onclick="_openMenu();" src="/assets/image/icon-menu.svg" class="icon font-size--large link" alt=""/>
