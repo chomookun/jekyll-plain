@@ -2,8 +2,6 @@ name: ~
 description: ~
 brand-icon: ~
 brand-name: ~
-
-destination: ./.site
 include:
   - README.md
 

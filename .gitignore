@@ -63,4 +63,4 @@ vendor/bundle/
 .bundle/
 
 # ignores _site
-.site/
+_site/
