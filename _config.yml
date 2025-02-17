@@ -1,11 +1,7 @@
 name: ~
-name_: "Jekyll Plain Theme"
 description: ~
-description_: "Jekyll Plain Theme is a simple and clean theme for Jekyll."
-brand: ~
-brand_: <img class="icon" src="/assets/image/brand-icon.svg"/>Jekyll Plain
 favicon: ~
-favicon_: /assets/image/brand-icon.svg
+brand: ~
 
 destination: ./.site
 include:
