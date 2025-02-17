@@ -2,15 +2,10 @@
 <html lang="en">
 <head>
     <meta charset='utf-8'>
-    <title>
-        {% if page.title %}
-            {{ page.title }}
-        {% else %} 
-            {{ site.name }} &mdash; {{ site.description }}
-        {% endif %}
-    </title>
-
+    <title>{% if page.title %}{{ page.title }} | {{ site.name }}{% else %}{{ site.name }}{% endif %}</title>
+    <meta name="description" content="{{ site.description }}">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" type="image/png" href="{{ site.favicon }}" sizes="32x32"/>
     <script src="/static/duice/duice.js"></script>
     <link rel="stylesheet" href="/static/duice/duice.css"/>
     <link rel="stylesheet" href="/static/duice/duice-theme.css"/>
@@ -87,6 +82,9 @@
             /*margin: 0 0.5rem;*/
             white-space: nowrap;
         }
+        #_header-menu-button {
+            display: none;
+        }
         @media screen and (max-width: 1023px) {
             header {
                 display: grid;
@@ -94,16 +92,16 @@
                     '_header-logo _header-menuButton'
                     '_header-menu _header-menu';
             }
-            header #_header-menuButton {
+            #_header-menu-button {
                 display: flex;
                 justify-content: end;
                 align-items: center;
                 padding-right: 1rem;
             }
-            header #_header-menu {
+            #_header-menu {
                 display: none;
             }
-            header #_header-menu.open {
+            #_header-menu.open {
                 display: flex;
                 margin-top: 1rem;
                 padding-top: 1rem;
@@ -182,6 +180,12 @@
             color: #888;
         }
     </style>
+    <script>
+        function _openMenu() {
+            document.querySelector('#_header-menu').classList.toggle('open');
+            document.querySelector('nav').classList.toggle('open');
+        }
+    </script>
 </head>
 
 <body>
@@ -195,7 +199,7 @@
         {{ content }}
     </main>
     <aside>
-
+        {% include aside.html %}
     </aside>
     <footer>
         {% include footer.html %}

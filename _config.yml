@@ -1,13 +1,11 @@
-name: "Jekyll true minimal theme"
-description: "Lightweight theme"
+name: "Jekyll Plain Theme"
+description: "Jekyll Plain Theme is a simple and clean theme for Jekyll."
 brand: <img class="icon" src="/static/image/brand-icon.svg"/>Jekyll Plain
+favicon: /static/image/brand-icon.svg
 
-source: .
-destination: ./_site
-
+destination: ./.site
 include:
   - README.md
-  - static/image/brand-icon.svg
 
 plugins:
   - jekyll-github-metadata

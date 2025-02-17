@@ -1,6 +1,9 @@
 <span id="_header-brand" onclick="document.location.href='/'" class="cursor--pointer">
     {{ site.brand }}
 </span>
+<span id="_header-menu-button">
+    <img onclick="_openMenu();" src="/static/image/icon-menu.svg" class="icon link" alt=""/>
+</span>
 <ul id="_header-menu">
     <li>
         <a href="{{ site.github.repository_url }}" target="_blank">

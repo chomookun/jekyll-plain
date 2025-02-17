@@ -15,6 +15,11 @@ bundle install --path vendor/bundle
 # Starts
 ```shell
 bundle exec jekyll clean && bundle exec jekyll serve --trace
+bundle exec jekyll clean && bundle exec jekyll serve --trace
+bundle exec jekyll clean && bundle exec jekyll serve --trace
+bundle exec jekyll clean && bundle exec jekyll serve --trace
+bundle exec jekyll clean && bundle exec jekyll serve --trace
+bundle exec jekyll clean && bundle exec jekyll serve --trace
 ```
 
 

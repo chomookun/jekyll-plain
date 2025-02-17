@@ -397,6 +397,7 @@ dialog:focus {
 
 /* code */
 code {
+  display: block;
   padding: 1rem;
   font-family: monospace;
 }
