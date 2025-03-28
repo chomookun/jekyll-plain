@@ -1,10 +1,12 @@
-<span id="_header-brand" onclick="document.location.href='/'" class="cursor--pointer">
-    <img class="icon" src="{{ site.brand-icon | default:'/assets/image/brand-icon.svg'}}" alt=""/>
-    {{ site.brand-title | default:site.github.repository_name }}
+<span id="_header-logo" onclick="document.location.href='/'" class="cursor--pointer">
+    <span id="_brand">
+        <img src="{{ site.brand-icon | default:'/assets/image/brand-icon.svg'}}" alt=""/>
+        <span>{{ site.brand-title | default:site.github.repository_name }}</span>
+    </span>
 </span>
-<span id="_header-menu-button">
+<div id="_header-menuButton">
     <img onclick="_openMenu();" src="/assets/image/icon-menu.svg" class="icon font-size--large link" alt=""/>
-</span>
+</div>
 <ul id="_header-menu">
     <li>
         <a href="{{ site.github.repository_url }}" target="_blank">

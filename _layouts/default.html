@@ -22,21 +22,21 @@
         body {
             display: grid;
             grid-template-areas:
-                '_header _header _header'
-                '_nav _main _aside'
-                '_footer _footer _footer';
-            grid-template-columns: 18rem calc(100% - 18rem - 10rem) 10rem;
+                    '_header _header _header'
+                    '_nav _main _aside'
+                    '_footer _footer _footer';
+            grid-template-columns: 18rem calc(100% - 18rem - 9rem) 9rem;
             grid-template-rows: auto 1fr 3rem;
         }
         @media screen and (max-width: 1023px) {
             body {
                 display: grid;
                 grid-template-areas:
-                    '_header'
-                    '_nav'
-                    '_main'
-                    '_aside'
-                    '_footer';
+                        '_header'
+                        '_nav'
+                        '_main'
+                        '_aside'
+                        '_footer';
                 grid-template-columns: 100%;
                 grid-template-rows: auto auto 1fr auto auto;
                 grid-gap: 0.5rem 0.5rem;
@@ -48,8 +48,7 @@
             grid-template-areas:
                     '_header-logo _header-menu';
             grid-template-columns: auto auto;
-            align-items: center;
-            border-bottom: groove 3px lightgray;
+            border-bottom: groove 2px lightgray;
             background-color: #fafafa;
             padding: 1rem;
         }
@@ -57,56 +56,57 @@
             border-bottom: groove 2px #6b6b6b;
             background-color: #222;
         }
-        #_header-brand {
+        header #_header-logo {
+            grid-area: _header-logo;
             display: flex;
             justify-content: start;
             align-items: center;
+        }
+        #_brand,
+        #_brand * {
             height: 2rem;
             line-height: 2rem;
             font-size: 2rem;
-            gap: 0.5rem;
-        }
-        #_header-brand * {
-            height: inherit;
-            line-height: inherit;
-            font-size: inherit;
+            vertical-align: middle;
             font-weight: bold;
         }
-        #_header-menu {
+        .dark-mode #_brand {
+            filter: invert(0.9);
+        }
+        header #_header-menuButton {
+            display: none;
+        }
+        header #_header-menu {
             grid-area: _header-menu;
             display: flex;
             flex-wrap: wrap;
             justify-content: end;
             align-items: center;
-            gap: 1rem;
             list-style-type: none;
             margin: 0;
             padding: 0;
         }
-        #_header-menu li {
-            /*margin: 0 0.5rem;*/
+        header #_header-menu li {
+            margin: 0 0.5rem;
             white-space: nowrap;
-        }
-        #_header-menu-button {
-            display: none;
         }
         @media screen and (max-width: 1023px) {
             header {
                 display: grid;
                 grid-template-areas:
-                    '_header-logo _header-menuButton'
-                    '_header-menu _header-menu';
+                        '_header-logo _header-menuButton'
+                        '_header-menu _header-menu';
             }
-            #_header-menu-button {
+            header #_header-menuButton {
                 display: flex;
                 justify-content: end;
                 align-items: center;
                 padding-right: 1rem;
             }
-            #_header-menu {
+            header #_header-menu {
                 display: none;
             }
-            #_header-menu.open {
+            header #_header-menu.open {
                 display: flex;
                 margin-top: 1rem;
                 padding-top: 1rem;
@@ -116,7 +116,7 @@
             grid-area: _nav;
             display: grid;
             grid-template-areas:
-                '_nav-menu';
+                    '_nav-menu';
             padding: 1rem;
         }
         nav #_nav-menu {
