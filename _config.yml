@@ -5,6 +5,7 @@ brand-title: ~
 
 plugins:
   - jekyll-github-metadata
+  - jekyll-navigation
 
 markdown: kramdown
 highlighter: rouge

@@ -1,0 +1,18 @@
+- title: Home
+  icon: <i class="fa-solid fa-house"></i>
+  url: /
+
+- title: Google
+  icon: <i class="fa-solid fa-circle-info"></i>
+  url: https://www.google.com
+  target: _blank
+
+- title: Docs
+  icon: <i class="fa-brands fa-dochub"></i>
+  children:
+    - title: Getting Started
+      icon: <i class="fa-regular fa-chart-bar"></i>
+      url: /docs/getting-started/
+    - title: API
+      icon: <i class="fa-solid fa-wifi"></i>
+      url: /docs/api/
