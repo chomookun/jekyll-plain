@@ -9,7 +9,7 @@
         <ul class="_nav-menu">
             {% for child in item.children %}
             <li>
-                <a href="{{ child.url }}" class="{% if child.url == nil %}disabled{% endif %}" target="{{ item.target | default: '_self' }}">
+                <a href="{{ child.url }}" class="{% if child.url == nil %}disabled{% endif %}" target="{{ child.target | default: '_self' }}">
                     {{ child.icon | default:'<i class="fa-regular fa-file"></i>' }}
                     {{ child.title }}
                 </a>
