@@ -70,7 +70,8 @@
             vertical-align: middle;
             font-weight: bold;
         }
-        .dark-mode #_brand {
+        .dark-mode #_brand,
+        .dark-mode #_brand * {
             filter: invert(0.9);
         }
         header #_header-menuButton {
@@ -128,9 +129,6 @@
         nav ._nav-menu ._nav-menu {
             margin-left: 1em;
         }
-        .dark-mode nav ._nav-menu li {
-            border-bottom: dotted 1px #444;
-        }
         nav ._nav-menu li a {
             display: flex;
             align-items: center;
@@ -141,6 +139,9 @@
             font-weight: bold;
             text-decoration: unset;
             border-bottom: dotted 1px #ccc;
+        }
+        .dark-mode nav ._nav-menu li a {
+            border-bottom: dotted 1px #444;
         }
         nav ._nav-menu li a:hover {
             padding-left: 1rem;
