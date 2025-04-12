@@ -2,7 +2,7 @@
     {% for item in site.data.navigation %}
     <li>
         <a href="{{ item.url }}" class="{% if item.url == nil %}disabled{% endif %}" target="{{ item.target | default: '_self' }}">
-            {{ item.icon | default:'<i class="fa-regular fa-file"></i>' }}
+            {{ item.icon | default:'' }}
             {{ item.title }}
         </a>
         {% if item.children %}
@@ -10,7 +10,7 @@
             {% for child in item.children %}
             <li>
                 <a href="{{ child.url }}" class="{% if child.url == nil %}disabled{% endif %}" target="{{ child.target | default: '_self' }}">
-                    {{ child.icon | default:'<i class="fa-regular fa-file"></i>' }}
+                    {{ child.icon | default:'' }}
                     {{ child.title }}
                 </a>
             </li>
