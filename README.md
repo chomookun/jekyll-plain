@@ -2,23 +2,33 @@
 
 jekyll plain theme
 
-# Installs jekyll
+## upgrades ruby
+```shell
+brew install ruby
+rbenv init -
+
+vim ~/.zshrc
+...
+// inserts rbenv output
+...
+```
+
+## Installs jekyll
 ```shell
 gem install --user-install jekyll bundler
 ```
 
-# Installs packages
+## Installs packages
 ```shell
 bundle install --path vendor/bundle
 ````
 
-# Starts
+## Starts
 ```shell
 bundle exec jekyll clean && bundle exec jekyll serve --trace
 ```
 
-
-# Usage
+## Usage
 ```shell
 bundle init
 ```
